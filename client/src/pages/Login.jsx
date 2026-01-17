@@ -14,7 +14,7 @@ const Login = () => {
       return
     }
     try{
-      await axios.post(`http://localhost:5000/api/auth/login`,{email,password});
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`,{email,password});
       navigate("/dashboard");
     }catch(error){
       console.error(error)
